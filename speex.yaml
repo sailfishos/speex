@@ -1,0 +1,33 @@
+Name: speex
+Summary: A voice compression format (codec)
+Version: 1.2~rc1
+Release: 1
+Group: System/Libraries
+License: BSD
+URL: http://www.speex.org/
+Sources:
+    - http://downloads.xiph.org/releases/speex/%{name}-1.2rc1.tar.gz
+Description: |
+    Speex is a patent-free compression format designed especially for
+    speech. It is specialized for voice communications at low bit-rates in
+    the 2-45 kbps range. Possible applications include Voice over IP
+    (VoIP), Internet audio streaming, audio books, and archiving of speech
+    data (e.g. voice mail).
+
+PkgConfigBR:
+    - ogg
+SubPackages:
+    - Name: tools
+      Summary: The tools package for %{name}
+      Group: Applications/Multimedia
+      Description: |
+          Speex is a patent-free compression format designed especially for
+          speech. This package contains tools files and user's manual for %{name}.
+
+    - Name: devel
+      Summary: Development package for %{name}
+      Group: Development/Libraries
+      Description: |
+          Speex is a patent-free compression format designed especially for
+          speech. This package contains development files for %{name}
+
