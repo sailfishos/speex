@@ -46,7 +46,7 @@ speech. This package contains development files for %{name}
 
 %build
 ./autogen.sh
-%configure --disable-static --enable-binaries
+%configure --disable-static --enable-binaries --enable-fixed-point
 make %{?jobs:-j%jobs}
 
 %install
@@ -61,7 +61,7 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/speex/manual.pdf
 %files
 %defattr(-,root,root,-)
 %doc COPYING
-%{_libdir}/libspeex*.so.*
+%{_libdir}/libspeex.so.*
 
 %files tools
 %defattr(-,root,root,-)
@@ -75,7 +75,13 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/speex/manual.pdf
 %doc AUTHORS TODO
 %doc doc/manual.pdf
 %dir %{_includedir}/speex
-%{_includedir}/speex/*.h
+%{_includedir}/speex/speex.h
+%{_includedir}/speex/speex_callbacks.h
+%{_includedir}/speex/speex_types.h
+%{_includedir}/speex/speex_stereo.h
+%{_includedir}/speex/speex_bits.h
+%{_includedir}/speex/speex_header.h
+%{_includedir}/speex/speex_config_types.h
 %{_datadir}/aclocal/speex.m4
-%{_libdir}/pkgconfig/speex*.pc
-%{_libdir}/libspeex*.so
+%{_libdir}/pkgconfig/speex.pc
+%{_libdir}/libspeex.so
