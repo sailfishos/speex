@@ -1,3 +1,3 @@
 [submodule "speex"]
 	path = speex
-	url = https://git.xiph.org/speex.git
+	url = https://git.sailfishos.org/mirror/speex
