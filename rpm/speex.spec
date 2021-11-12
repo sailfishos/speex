@@ -2,7 +2,6 @@ Name:       speex
 Summary:    A voice compression format (codec)
 Version:    1.2.0
 Release:    1
-Group:      System/Libraries
 License:    BSD
 URL:        http://www.speex.org/
 Source0:    %{name}-%{version}.tar.bz2
@@ -22,7 +21,6 @@ data (e.g. voice mail).
 
 %package tools
 Summary:    The tools package for %{name}
-Group:      Applications/Multimedia
 Requires:   %{name} = %{version}-%{release}
 
 %description tools
@@ -32,7 +30,6 @@ speech. This package contains tools files and user's manual for %{name}.
 
 %package devel
 Summary:    Development package for %{name}
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
@@ -42,12 +39,12 @@ speech. This package contains development files for %{name}
 
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
 %build
 ./autogen.sh
 %configure --disable-static --enable-binaries --enable-fixed-point
-make %{?jobs:-j%jobs}
+%make_build
 
 %install
 rm -rf %{buildroot}
@@ -60,7 +57,7 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/speex/manual.pdf
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_libdir}/libspeex.so.*
 
 %files tools
