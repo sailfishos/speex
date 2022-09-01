@@ -1,6 +1,6 @@
 Name:       speex
 Summary:    A voice compression format (codec)
-Version:    1.2.0
+Version:    1.2.1
 Release:    1
 License:    BSD
 URL:        http://www.speex.org/
