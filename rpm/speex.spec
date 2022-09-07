@@ -5,7 +5,6 @@ Release:    1
 License:    BSD
 URL:        http://www.speex.org/
 Source0:    %{name}-%{version}.tar.bz2
-Patch0:     0001-speex-Remove-date-from-version-for-reproducible-buil.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(ogg)
